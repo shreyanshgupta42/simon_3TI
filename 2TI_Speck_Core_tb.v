@@ -29,6 +29,7 @@ module speck_tb_2TI;
 	reg [383:0] pka = 384'd0;
 	reg [383:0] pkc = 384'd0;*/
 	reg [255:0] pka = 256'h6c617669757165207469206564616d200f0e0d0c0b0a09080706050403020100;
+// 	reg [255:0] pka = 256'h1000000000000000000000000000000000000000000000000000000000000001;
 	reg [255:0] pkb = 256'd0;
 	reg [255:0] pkc = 256'd0;
 	//reg [255:0] pkc = 256'd655465465465 ^ 256'd54561156465;
@@ -74,6 +75,10 @@ module speck_tb_2TI;
 			end
 	
 			#10;
+			$display("data_ina=%0h",data_ina);
+			if(i>4)begin
+			    $stop;
+			end
 		end
 		we = 0;
 		Start = 1;
